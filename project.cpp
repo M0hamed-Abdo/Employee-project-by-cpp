@@ -93,7 +93,7 @@ public:
 		cout << "Engineering Specialization :" << engineer_type << endl;
 	}
 };
-class Manager {
+class Employee_Manager {
 private:
 int teacher_count = 0;
 int engineer_count = 0;
@@ -191,6 +191,10 @@ void search_by_id() {
 		return;
 }
 void update_by_id() {
+    if (emp.empty()) {
+        cout << "NO EMPLOYEE RECORD" << endl;
+        return;
+    }
     int id_update;
 	cout << "enter id for update :";
 	cin >> id_update;
@@ -204,6 +208,10 @@ void update_by_id() {
 	cout << "This ID Not Found" << endl;
 }
 void delete_employee() {
+    if (emp.empty()) {
+        cout << "NO EMPLOYEE RECORD" << endl;
+        return;
+    }
     int id_delete;
     cout << "Enter ID for delete: ";
     cin >> id_delete;
@@ -324,6 +332,6 @@ void menu() {
 	}
 };
 int main() {
-	Manager  manager;
+	Employee_Manager  manager;
 	manager.menu();
 }
